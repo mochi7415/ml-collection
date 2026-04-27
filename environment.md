@@ -409,3 +409,83 @@ zstandard                                0.23.0
 [notice] To update, run: python.exe -m pip install --upgrade pip
 $                                                                                                          08:18:24
 ```
+
+### vscode
+
+setup.json
+
+```json
+{
+    // 色関係の上書き設定
+    "workbench.colorCustomizations": {
+        "editorBracketHighlight.foreground1": "#dfdfdf",
+        "editorBracketHighlight.foreground2": "#dadada",
+        "editorBracketHighlight.foreground3": "#c2c2c2",
+        "editorBracketHighlight.foreground4": "#858585",
+        "editorBracketHighlight.foreground5": "#afafaf",
+        "editorBracketHighlight.foreground6": "#cfcfcf",
+        "editorBracketHighlight.unexpectedBracket.foreground": "#db6165",
+        "[Ayu Dark]": {
+            "editor.background": "#000000",
+            "sideBar.background": "#000000",
+            "terminal.background": "#000000",
+            "notebook.editorBackground": "#000000",
+            "notebook.cellEditorBackground": "#000000"
+        },
+        // markdownのコードブロックの文字
+        "textPreformat.foreground": "#3cc8ff",
+
+        // markdownのコードブロックの背景
+        "textPreformat.background": "#252525",
+
+        // var(--theme-ui-foreground) に相当する色
+        "foreground": "#eaeaea"
+    },
+    // vimのキーバインド
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["ｊ", "ｊ"],
+            "after": ["<Esc>"]
+        }
+    ],
+    // vimのショートカット
+    "vim.handleKeys": {
+        //以下はVimのショートカットを利用
+        "<C-d>": true, //下方向へのカーソル移動 ※上方向へのカーソル移動(Ctrl+u)はデフォルト設定でも動作
+        //以下はVimではなく、Windows側のショートカット
+
+        "<C-c>": false, //コピー
+        "<C-v>": false, //貼り付け ※VisualBlockモードはCtrl＋Qで行う
+        "<C-x>": false, //切り取り
+        "<C-f>": false, //検索
+        "<C-a>": false, //全選択
+        "<C-p>": false, //ファイル検索
+        "<C-y>": false //やり直す
+    },
+    "vim.easymotion": true,
+    "vim.sneak": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "d"],
+            "after": ["d", "d"]
+        },
+        {
+            "before": ["<C-n>"],
+            "commands": [":nohl"]
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.textColor": "#fff",
+    "vim.highlightedyank.color": "rgba(250, 255, 255, 0.5)",
+    "vim.highlightedyank.duration": 150
+}
+```
